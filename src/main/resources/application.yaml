@@ -1,1 +1,13 @@
-spring.application.name=hazelcast-demo
+hazelcast:
+  jet:
+    client:
+      cluster-name: jet
+      network:
+        addresses:
+          - hazelcast-jet.hazelcast-jet.svc.cluster.local:5701
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.hazelcast.HazelcastAutoConfiguration
+  main:
+    allow-circular-references: true

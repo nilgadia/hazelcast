@@ -28,5 +28,5 @@ data:
                 <group name="hazelcast-jet"/>
             </cluster>
         </jet>
-        <cluster-name>hazelcast-jet</cluster-name>
+        <cluster-name>jet</cluster-name>
     </hazelcast>

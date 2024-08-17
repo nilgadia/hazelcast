@@ -13,15 +13,8 @@ public class HazelcastJetConfig {
     @Bean
     public JetInstance jetInstance() {
         JetClientConfig clientConfig = new JetClientConfig();
-        clientConfig.setClusterName("hazelcast-cluster");
-        clientConfig.getNetworkConfig().addAddress("external-ip-or-node-ip:5701");
+        clientConfig.setClusterName("jet");
+        clientConfig.getNetworkConfig().addAddress("localhost:5701");
         return Jet.newJetClient(clientConfig);
-    }
-
-    @Bean
-    public JobConfig jobConfig() {
-        JobConfig jobConfig = new JobConfig();
-        // Configure your job if needed
-        return jobConfig;
     }
 }

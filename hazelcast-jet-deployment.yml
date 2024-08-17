@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hazelcast-jet
+  namespace: hazelcast-jet
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: hazelcast-jet
+  template:
+    metadata:
+      labels:
+        app: hazelcast-jet
+    spec:
+      containers:
+      - name: hazelcast-jet
+        image: hazelcast/hazelcast-jet:4.5.1
+        volumeMounts:
+        - name: hazelcast-config
+          mountPath: /opt/hazelcast-jet/config/hazelcast.xml
+          subPath: hazelcast.xml
+        ports:
+        - containerPort: 5701
+      volumes:
+      - name: hazelcast-config
+        configMap:
+          name: hazelcast-config

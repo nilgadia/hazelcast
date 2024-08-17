@@ -1,0 +1,7 @@
+hazelcast:
+  jet:
+    client:
+      cluster-name: hazelcast-jet
+      network:
+        addresses:
+          - 127.0.0.1:5701

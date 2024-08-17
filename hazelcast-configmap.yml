@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hazelcast-config
+  namespace: hazelcast-jet
+data:
+  hazelcast.xml: |
+    <hazelcast xmlns="http://www.hazelcast.com/schema/config"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.hazelcast.com/schema/config
+                                   http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
+        <network>
+            <join>
+                <multicast enabled="false"/>
+                <tcp-ip enabled="true">
+                    <member>hazelcast-jet-0.hazelcast-jet-headless.hazelcast-jet.svc.cluster.local:5701</member>
+                    <member>hazelcast-jet-1.hazelcast-jet-headless.hazelcast-jet.svc.cluster.local:5701</member>
+                    <member>hazelcast-jet-2.hazelcast-jet-headless.hazelcast-jet.svc.cluster.local:5701</member>
+                    <member>hazelcast-jet-3.hazelcast-jet-headless.hazelcast-jet.svc.cluster.local:5701</member>
+                </tcp-ip>
+            </join>
+        </network>
+        <map name="hazelcast-jet">
+            <backup-count>1</backup-count>
+        </map>
+        <jet>
+            <cluster>
+                <group name="hazelcast-jet"/>
+            </cluster>
+        </jet>
+        <cluster-name>hazelcast-jet</cluster-name>
+    </hazelcast>

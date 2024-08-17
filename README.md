@@ -4,7 +4,7 @@
 
 ### Prerequisite
 
-* Java 11
+* Java 21
 * Gradle/Maven
 * IDE (Eclipse & IntelliJ)
 * Docker Desktop

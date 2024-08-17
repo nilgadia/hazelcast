@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example.hazelcast</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>hazelcast-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hazelcast-demo</name>
     <description>Demo project for Spring Boot</description>
@@ -28,7 +28,7 @@
     </scm>
     <properties>
         <java.version>21</java.version>
-        <spring-boot.version>3.3.0</spring-boot.version>
+        <spring-boot.version>3.3.2</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-compiler.source>21</maven-compiler.source>
